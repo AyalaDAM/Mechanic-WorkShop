@@ -1,0 +1,24 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-hibernate
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: user
+      MYSQL_DATABASE: hibernate
+      MYSQL_USER: prueba
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker-entrypoint-initdb:/docker-entrypoint-initdb:ro
+      # - ./my.cnf:/etc/mysql/conf.d/my.cnf  # descomentar si proporcionas my.cnf
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-proot_password_here"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql-data:

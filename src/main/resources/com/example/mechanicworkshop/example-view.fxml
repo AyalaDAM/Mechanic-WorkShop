@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mechanicworkshop.ExampleController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Labels para mostrar los datos -->
+    <Label text="Cliente:"/>
+    <Label fx:id="cliente"/>
+
+    <!-- Botones para acciones -->
+    <HBox alignment="CENTER" spacing="5.0">
+        <Label text="Usa este primero:"/>
+        <Button text="Añadir elemento" onAction="#addElements"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="5.0">
+        <Label text="Usa este segundo"/>
+        <Button text="Mostrar todos" onAction="#showAll"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="5.0">
+        <Label text="Usa este tercero"/>
+        <Button text="Editar primer elemento" onAction="#editFirstElement"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="5.0">
+        <Label text="Usa este cuarto"/>
+        <Button text="Filtrar por nombre ' X\'" onAction="#getByFilters"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="5.0">
+        <Label text="Usa este quinto"/>
+        <Button text="Buscar por ID" onAction="#getByID"/>
+    </HBox>
+</VBox>

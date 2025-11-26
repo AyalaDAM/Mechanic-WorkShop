@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="zonaCentral" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.mechanicworkshop.MainController">
+
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Clientes">
+                    <items>
+                        <MenuItem text="Listado" fx:id="clienteListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="clienteAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+                <Menu text="Vehículos">
+                    <items>
+                        <MenuItem text="Listado" fx:id="vehiculoListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="vehiculoAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+                <Menu text="Talleres">
+                    <items>
+                        <MenuItem text="Listado" fx:id="talleresListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="talleresAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+                <Menu text="Trabajadores">
+                    <items>
+                        <MenuItem text="Listado" fx:id="trabajadoresListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="trabajadoresAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+                <Menu text="Servicios">
+                    <items>
+                        <MenuItem text="Listado" fx:id="serviciosListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="serviciosAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+                <Menu text="Piezas">
+                    <items>
+                        <MenuItem text="Listado" fx:id="piezasListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="piezasAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+                <Menu text="Citas">
+                    <items>
+                        <MenuItem text="Listado" fx:id="citasListado" onAction="#mostrarListado"/>
+                        <MenuItem  text="Añadir" fx:id="citasAnadir" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+</BorderPane>
