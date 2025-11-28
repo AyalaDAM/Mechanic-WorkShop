@@ -1,5 +1,7 @@
-package com.example.mechanicworkshop;
+package com.example.mechanicworkshop.listControllers;
 
+import com.example.mechanicworkshop.DatabaseManager;
+import com.example.mechanicworkshop.MainController;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;

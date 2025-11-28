@@ -21,4 +21,8 @@ module com.example.mechanicworkshop {
     opens models to javafx.fxml, org.hibernate.orm.core, javafx.base;
 
     exports com.example.mechanicworkshop;
+    exports com.example.mechanicworkshop.listControllers;
+    opens com.example.mechanicworkshop.listControllers to javafx.fxml, org.hibernate.orm.core;
+    exports com.example.mechanicworkshop.addControllers;
+    opens com.example.mechanicworkshop.addControllers to javafx.fxml, org.hibernate.orm.core;
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mechanicworkshop.VehiculosListController"
+      fx:controller="com.example.mechanicworkshop.listControllers.VehiculosListController"
       prefHeight="400.0" prefWidth="600.0">
     <TableView fx:id="vehiculosTable">
         <columns>

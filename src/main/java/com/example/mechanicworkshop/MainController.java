@@ -44,27 +44,29 @@ public class MainController {
 
         String id = item.getId();
 
+        String path = "listViews/";
+
         switch (id) {
             case "clienteListado":
-                cargarVista("cliente-list-view.fxml");
+                cargarVista(path + "cliente-list-view.fxml");
                 break;
             case "vehiculoListado":
-                cargarVista("vehiculos-list-view.fxml");
+                cargarVista(path + "vehiculos-list-view.fxml");
                 break;
             case "talleresListado":
-                cargarVista("talleres-list-view.fxml");
+                cargarVista(path + "talleres-list-view.fxml");
                 break;
             case "trabajadoresListado":
-                cargarVista("trabajadores-list-view.fxml");
+                cargarVista(path + "trabajadores-list-view.fxml");
                 break;
             case "serviciosListado":
-                cargarVista("servicios-list-view.fxml");
+                cargarVista(path + "servicios-list-view.fxml");
                 break;
             case "piezasListado":
-                cargarVista("piezas-list-view.fxml");
+                cargarVista(path + "piezas-list-view.fxml");
                 break;
             case "citasListado":
-                cargarVista("citas-list-view.fxml");
+                cargarVista(path + "citas-list-view.fxml");
                 break;
             default:
                 System.out.println("Listado no reconocido");
@@ -76,27 +78,29 @@ public class MainController {
 
         String id = item.getId();
 
+        String path = "addViews/";
+
         switch (id) {
-            case "clienteListado":
-                cargarVista("cliente-anadir-view.fxml");
+            case "clienteAnadir":
+                cargarVista(path + "cliente-add-view.fxml");
                 break;
-            case "vehiculoListado":
-                cargarVista("vehiculos-anadir-view.fxml");
+            case "vehiculoAnadir":
+                cargarVista(path + "vehiculos-add-view.fxml");
                 break;
-            case "talleresListado":
-                cargarVista("talleres-anadir-view.fxml");
+            case "talleresAnadir":
+                cargarVista(path + "talleres-add-view.fxml");
                 break;
-            case "trabajadoresListado":
-                cargarVista("trabajadores-anadir-view.fxml");
+            case "trabajadoresAnadir":
+                cargarVista(path + "trabajadores-add-view.fxml");
                 break;
-            case "serviciosListado":
-                cargarVista("servicios-anadir-view.fxml");
+            case "serviciosAnadir":
+                cargarVista(path + "servicios-add-view.fxml");
                 break;
-            case "piezasListado":
-                cargarVista("piezas-anadir-view.fxml");
+            case "piezasAnadir":
+                cargarVista(path + "piezas-add-view.fxml");
                 break;
-            case "citasListado":
-                cargarVista("citas-anadir-view.fxml");
+            case "citasAnadir":
+                cargarVista(path + "citas-add-view.fxml");
                 break;
             default:
                 System.out.println("Listado no reconocido");

@@ -13,8 +13,4 @@ public class HomeController {
     public void setMainController (MainController main) {
         this.mainController = main;
     }
-
-    public void createItem() {
-        mainController.mostrarHome();
-    }
 }

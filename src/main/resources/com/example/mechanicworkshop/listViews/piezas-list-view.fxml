@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mechanicworkshop.listControllers.PiezasListController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <TableView fx:id="piezasTable">
+        <columns>
+            <TableColumn fx:id="colPiezaId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colPiezaNombre" text="Nombre" prefWidth="150"/>
+            <TableColumn fx:id="colPiezaDescripcion" text="Descripción" prefWidth="200"/>
+            <TableColumn fx:id="colPiezaPrecio" text="Precio" prefWidth="100"/>
+            <TableColumn fx:id="colPiezaStock" text="Stock" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+</VBox>

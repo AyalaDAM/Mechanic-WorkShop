@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mechanicworkshop.listControllers.TrabajadoresListController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <TableView fx:id="trabajadoresTable">
+        <columns>
+            <TableColumn fx:id="colTrabajadorId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colTrabajadorNombre" text="Nombre" prefWidth="150"/>
+            <TableColumn fx:id="colTrabajadorApellido" text="Apellido" prefWidth="150"/>
+            <TableColumn fx:id="colTrabajadorPuesto" text="Puesto" prefWidth="120"/>
+            <TableColumn fx:id="colTrabajadorTelefono" text="Teléfono" prefWidth="120"/>
+            <TableColumn fx:id="colTrabajadorTaller" text="Taller" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+</VBox>

@@ -46,14 +46,14 @@ public class ListadosController {
     @FXML private TableColumn<Trabajador, String> colTrabajadorTelefono;
     @FXML private TableColumn<Trabajador, String> colTrabajadorTaller;
 
-    // Servicios
+    // ServiciosListController
     @FXML private TableView<Servicio> serviciosTable;
     @FXML private TableColumn<Servicio, Integer> colServicioId;
     @FXML private TableColumn<Servicio, String> colServicioDescripcion;
     @FXML private TableColumn<Servicio, Double> colServicioPrecio;
     @FXML private TableColumn<Servicio, Integer> colServicioDuracion;
 
-    // Piezas
+    // PiezasListController
     @FXML private TableView<Pieza> piezasTable;
     @FXML private TableColumn<Pieza, Integer> colPiezaId;
     @FXML private TableColumn<Pieza, String> colPiezaNombre;

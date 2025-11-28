@@ -1,5 +1,7 @@
-package com.example.mechanicworkshop;
+package com.example.mechanicworkshop.listControllers;
 
+import com.example.mechanicworkshop.DatabaseManager;
+import com.example.mechanicworkshop.MainController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -35,9 +37,5 @@ public class VehiculosListController {
 
     public void setMainController (MainController main) {
         this.mainController = main;
-    }
-
-    public void createItem() {
-        mainController.mostrarHome();
     }
 }
