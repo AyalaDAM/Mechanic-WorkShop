@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.addControllers.CitaAddController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <GridPane vgap="15" hgap="10" alignment="TOP_CENTER">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120" halignment="RIGHT" />
+            <ColumnConstraints minWidth="300" hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="Cliente:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="clienteCombo" promptText="Seleccione Cliente" prefWidth="300" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Vehículo:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="vehiculoCombo" promptText="Seleccione Vehículo" prefWidth="300" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Servicio:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="servicioCombo" promptText="Seleccione Servicio" prefWidth="300" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Mecánico:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="trabajadorCombo" promptText="Seleccione Trabajador" prefWidth="300" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Fecha:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <DatePicker fx:id="fechaPicker" prefWidth="300" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Hora (HH:mm):" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="horaField" promptText="Ej: 10:30" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Label fx:id="mensajeLabel" textFill="red" visible="false"/>
+        <Button text="Agendar Cita" onAction="#guardarCita" defaultButton="true"/>
+    </HBox>
+</VBox>

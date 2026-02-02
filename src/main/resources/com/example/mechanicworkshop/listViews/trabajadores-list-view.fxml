@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mechanicworkshop.listControllers.TrabajadoresListController"
-      prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
-    <TableView fx:id="trabajadoresTable">
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.listControllers.TrabajadoresListController">
+    <stylesheets><URL value="@../css/style.css" /></stylesheets>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <TableView fx:id="trabajadoresTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colTrabajadorId" text="ID" prefWidth="50"/>
-            <TableColumn fx:id="colTrabajadorNombre" text="Nombre" prefWidth="150"/>
-            <TableColumn fx:id="colTrabajadorApellido" text="Apellido" prefWidth="150"/>
-            <TableColumn fx:id="colTrabajadorPuesto" text="Puesto" prefWidth="120"/>
-            <TableColumn fx:id="colTrabajadorTelefono" text="Teléfono" prefWidth="120"/>
-            <TableColumn fx:id="colTrabajadorTaller" text="Taller" prefWidth="150"/>
+            <TableColumn fx:id="colTrabajadorId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colTrabajadorNombre" text="Nombre" prefWidth="150" />
+            <TableColumn fx:id="colTrabajadorApellido" text="Apellidos" prefWidth="150" />
+            <TableColumn fx:id="colTrabajadorPuesto" text="Puesto" prefWidth="150" />
+            <TableColumn fx:id="colTrabajadorTelefono" text="Teléfono" prefWidth="120" />
+            <TableColumn fx:id="colTrabajadorTaller" text="Taller Asignado" prefWidth="200" />
         </columns>
     </TableView>
-
 </VBox>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.addControllers.TallerAddController">
+    <stylesheets><URL value="@../css/style.css" /></stylesheets>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <GridPane vgap="15" hgap="10" alignment="TOP_CENTER">
+        <columnConstraints><ColumnConstraints minWidth="100" halignment="RIGHT" /><ColumnConstraints minWidth="300" hgrow="ALWAYS" /></columnConstraints>
+
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="nombreField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Dirección:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="direccionField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Teléfono:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="telefonoField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Label fx:id="mensajeLabel" textFill="red" visible="false"/>
+        <Button text="Registrar Taller" onAction="#guardarTaller" defaultButton="true"/>
+    </HBox>
+</VBox>

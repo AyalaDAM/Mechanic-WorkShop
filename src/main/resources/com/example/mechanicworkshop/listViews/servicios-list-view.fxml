@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mechanicworkshop.listControllers.ServiciosListController"
-      prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
-    <TableView fx:id="serviciosTable">
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.listControllers.ServiciosListController">
+    <stylesheets><URL value="@../css/style.css" /></stylesheets>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <TableView fx:id="serviciosTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colServicioId" text="ID" prefWidth="50"/>
-            <TableColumn fx:id="colServicioDescripcion" text="Descripción" prefWidth="200"/>
-            <TableColumn fx:id="colServicioPrecio" text="Precio" prefWidth="100"/>
-            <TableColumn fx:id="colServicioDuracion" text="Duración (h)" prefWidth="100"/>
+            <TableColumn fx:id="colServicioId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colServicioDescripcion" text="Descripción" prefWidth="400" />
+            <TableColumn fx:id="colServicioPrecio" text="Precio (€)" prefWidth="100" />
+            <TableColumn fx:id="colServicioDuracion" text="Duración (h)" prefWidth="100" />
         </columns>
     </TableView>
-
 </VBox>

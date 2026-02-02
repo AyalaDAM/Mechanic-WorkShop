@@ -2,13 +2,13 @@ package com.example.mechanicworkshop.listControllers;
 
 import com.example.mechanicworkshop.DatabaseManager;
 import com.example.mechanicworkshop.MainController;
+import com.example.mechanicworkshop.components.SectionHeaderController;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.Cliente;
-
 import java.util.Objects;
 
 public class ClienteListController {
@@ -22,20 +22,23 @@ public class ClienteListController {
     @FXML private TableColumn<Cliente, String> colClienteTelefono;
     @FXML private TableColumn<Cliente, String> colClienteEmail;
 
+    @FXML private SectionHeaderController headerController;
+
     @FXML public void initialize() {
+        if (headerController != null) {
+            headerController.setTitle("Listado de Clientes");
+        }
+
         colClienteId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colClienteNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colClienteApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colClienteTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
         colClienteEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
         clientesTable.setItems(FXCollections.observableArrayList(Objects.requireNonNull(DatabaseManager.getAll(Cliente.class))));
     }
 
     public void setMainController (MainController main) {
         this.mainController = main;
-    }
-
-    public void createItem() {
-        mainController.mostrarHome();
     }
 }

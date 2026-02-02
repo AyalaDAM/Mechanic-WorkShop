@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mechanicworkshop.listControllers.PiezasListController"
-      prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
-    <TableView fx:id="piezasTable">
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.listControllers.PiezasListController">
+    <stylesheets><URL value="@../css/style.css" /></stylesheets>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <TableView fx:id="piezasTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colPiezaId" text="ID" prefWidth="50"/>
-            <TableColumn fx:id="colPiezaNombre" text="Nombre" prefWidth="150"/>
-            <TableColumn fx:id="colPiezaDescripcion" text="Descripción" prefWidth="200"/>
-            <TableColumn fx:id="colPiezaPrecio" text="Precio" prefWidth="100"/>
-            <TableColumn fx:id="colPiezaStock" text="Stock" prefWidth="80"/>
+            <TableColumn fx:id="colPiezaId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colPiezaNombre" text="Nombre" prefWidth="200" />
+            <TableColumn fx:id="colPiezaDescripcion" text="Descripción" prefWidth="300" />
+            <TableColumn fx:id="colPiezaPrecio" text="Precio (€)" prefWidth="100" />
+            <TableColumn fx:id="colPiezaStock" text="Stock" prefWidth="80" />
         </columns>
     </TableView>
-
 </VBox>

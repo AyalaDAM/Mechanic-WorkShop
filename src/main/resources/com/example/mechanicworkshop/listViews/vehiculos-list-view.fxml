@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mechanicworkshop.listControllers.VehiculosListController"
-      prefHeight="400.0" prefWidth="600.0">
-    <TableView fx:id="vehiculosTable">
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.listControllers.VehiculosListController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <TableView fx:id="vehiculosTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colVehiculoId" text="ID" prefWidth="50"/>
-            <TableColumn fx:id="colVehiculoCliente" text="Cliente" prefWidth="150"/>
-            <TableColumn fx:id="colVehiculoMarca" text="Marca" prefWidth="100"/>
-            <TableColumn fx:id="colVehiculoModelo" text="Modelo" prefWidth="100"/>
-            <TableColumn fx:id="colVehiculoMatricula" text="Matrícula" prefWidth="100"/>
-            <TableColumn fx:id="colVehiculoAnio" text="Año" prefWidth="70"/>
+            <TableColumn fx:id="colVehiculoId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colVehiculoMarca" text="Marca" prefWidth="150" />
+            <TableColumn fx:id="colVehiculoModelo" text="Modelo" prefWidth="150" />
+            <TableColumn fx:id="colVehiculoMatricula" text="Matrícula" prefWidth="120" />
+            <TableColumn fx:id="colVehiculoAnio" text="Año" prefWidth="80" />
+            <TableColumn fx:id="colVehiculoCliente" text="Propietario" prefWidth="200" />
         </columns>
     </TableView>
 </VBox>

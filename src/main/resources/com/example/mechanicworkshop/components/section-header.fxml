@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="5" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.components.SectionHeaderController">
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Rectangle fx:id="accentBar" width="5" height="30" style="-fx-fill: #e67e22;" />
+        <Label fx:id="titleLabel" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Sección" />
+    </HBox>
+    <Rectangle width="1200" height="1" style="-fx-fill: #dcdde1;" />
+</VBox>

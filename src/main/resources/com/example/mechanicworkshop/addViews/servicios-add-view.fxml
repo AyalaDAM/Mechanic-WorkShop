@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.addControllers.ServicioAddController">
+    <stylesheets><URL value="@../css/style.css" /></stylesheets>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <GridPane vgap="15" hgap="10" alignment="TOP_CENTER">
+        <columnConstraints><ColumnConstraints minWidth="120" halignment="RIGHT" /><ColumnConstraints minWidth="300" hgrow="ALWAYS" /></columnConstraints>
+
+        <Label text="Descripción:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="descField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Precio (€):" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="precioField" promptText="0.00" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Duración (h):" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="duracionField" promptText="1.5" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+        <Label fx:id="mensajeLabel" textFill="red" visible="false"/>
+        <Button text="Crear Servicio" onAction="#guardarServicio" defaultButton="true"/>
+    </HBox>
+</VBox>

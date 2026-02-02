@@ -2,57 +2,70 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.URL?>
 
-<BorderPane fx:id="zonaCentral" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.mechanicworkshop.MainController">
+<BorderPane fx:id="zonaCentral" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.MainController">
+    <stylesheets>
+        <URL value="@css/style.css" />
+    </stylesheets>
 
     <top>
-        <MenuBar>
+        <MenuBar BorderPane.alignment="CENTER">
             <menus>
+                <Menu text="Archivo">
+                    <items>
+                        <MenuItem text="Inicio" onAction="#mostrarHome"/>
+                        <SeparatorMenuItem />
+                        <MenuItem text="Cerrar Sesión" onAction="#cerrarSesion"/>
+                        <MenuItem text="Salir" onAction="#salir"/>
+                    </items>
+                </Menu>
+
                 <Menu text="Clientes">
                     <items>
-                        <MenuItem text="Listado" fx:id="clienteListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="clienteAnadir" onAction="#mostrarAnadir"/>
+                        <MenuItem fx:id="clienteListado" text="Listado de Clientes" onAction="#mostrarListado"/>
+                        <MenuItem fx:id="clienteAnadir" text="Nuevo Cliente" onAction="#mostrarAnadir"/>
                     </items>
                 </Menu>
+
                 <Menu text="Vehículos">
                     <items>
-                        <MenuItem text="Listado" fx:id="vehiculoListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="vehiculoAnadir" onAction="#mostrarAnadir"/>
+                        <MenuItem fx:id="vehiculoListado" text="Listado de Vehículos" onAction="#mostrarListado"/>
+                        <MenuItem fx:id="vehiculoAnadir" text="Nuevo Vehículo" onAction="#mostrarAnadir"/>
                     </items>
                 </Menu>
-                <Menu text="Talleres">
-                    <items>
-                        <MenuItem text="Listado" fx:id="talleresListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="talleresAnadir" onAction="#mostrarAnadir"/>
-                    </items>
-                </Menu>
-                <Menu text="Trabajadores">
-                    <items>
-                        <MenuItem text="Listado" fx:id="trabajadoresListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="trabajadoresAnadir" onAction="#mostrarAnadir"/>
-                    </items>
-                </Menu>
-                <Menu text="Servicios">
-                    <items>
-                        <MenuItem text="Listado" fx:id="serviciosListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="serviciosAnadir" onAction="#mostrarAnadir"/>
-                    </items>
-                </Menu>
-                <Menu text="Piezas">
-                    <items>
-                        <MenuItem text="Listado" fx:id="piezasListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="piezasAnadir" onAction="#mostrarAnadir"/>
-                    </items>
-                </Menu>
+
                 <Menu text="Citas">
                     <items>
-                        <MenuItem text="Listado" fx:id="citasListado" onAction="#mostrarListado"/>
-                        <MenuItem  text="Añadir" fx:id="citasAnadir" onAction="#mostrarAnadir"/>
+                        <MenuItem fx:id="citasListado" text="Listado de Citas" onAction="#mostrarListado"/>
+                        <MenuItem fx:id="citasAnadir" text="Nueva Cita" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+
+                <Menu text="Taller">
+                    <items>
+                        <MenuItem fx:id="talleresListado" text="Talleres" onAction="#mostrarListado"/>
+                        <MenuItem fx:id="trabajadoresListado" text="Trabajadores" onAction="#mostrarListado"/>
+                        <SeparatorMenuItem />
+                        <MenuItem fx:id="talleresAnadir" text="Añadir Taller" onAction="#mostrarAnadir"/>
+                        <MenuItem fx:id="trabajadoresAnadir" text="Añadir Trabajador" onAction="#mostrarAnadir"/>
+                    </items>
+                </Menu>
+
+                <Menu text="Servicios y Piezas">
+                    <items>
+                        <MenuItem fx:id="serviciosListado" text="Servicios" onAction="#mostrarListado"/>
+                        <MenuItem fx:id="piezasListado" text="Piezas" onAction="#mostrarListado"/>
+                        <SeparatorMenuItem />
+                        <MenuItem fx:id="serviciosAnadir" text="Añadir Servicio" onAction="#mostrarAnadir"/>
+                        <MenuItem fx:id="piezasAnadir" text="Añadir Pieza" onAction="#mostrarAnadir"/>
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
     </top>
+
+    <center>
+    </center>
 
 </BorderPane>

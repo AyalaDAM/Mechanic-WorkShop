@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mechanicworkshop.listControllers.ClienteListController"
-      prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
-    <TableView fx:id="clientesTable">
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.listControllers.ClienteListController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <TableView fx:id="clientesTable" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="colClienteId" text="ID" prefWidth="50" />
-            <TableColumn fx:id="colClienteNombre" text="Nombre" prefWidth="150" />
-            <TableColumn fx:id="colClienteApellido" text="Apellido" prefWidth="150" />
-            <TableColumn fx:id="colClienteTelefono" text="Teléfono" prefWidth="120" />
-            <TableColumn fx:id="colClienteEmail" text="Email" prefWidth="200" />
+            <TableColumn fx:id="colClienteNombre" text="Nombre" prefWidth="200" />
+            <TableColumn fx:id="colClienteApellido" text="Apellidos" prefWidth="250" />
+            <TableColumn fx:id="colClienteTelefono" text="Teléfono" prefWidth="150" />
+            <TableColumn fx:id="colClienteEmail" text="Email" prefWidth="300" />
         </columns>
     </TableView>
-
 </VBox>

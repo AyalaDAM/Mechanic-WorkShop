@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
-<VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.mechanicworkshop.listControllers.CitasListController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
-    <TableView fx:id="citasTable">
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mechanicworkshop.listControllers.CitasListController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <fx:include fx:id="header" source="../components/section-header.fxml" />
+
+    <TableView fx:id="citasTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colCitaId" text="ID" prefWidth="50"/>
-            <TableColumn fx:id="colCitaCliente" text="Cliente" prefWidth="150"/>
-            <TableColumn fx:id="colCitaVehiculo" text="Vehículo" prefWidth="150"/>
-            <TableColumn fx:id="colCitaTrabajador" text="Trabajador" prefWidth="150"/>
-            <TableColumn fx:id="colCitaServicio" text="Servicio" prefWidth="150"/>
-            <TableColumn fx:id="colCitaFechaHora" text="Fecha/Hora" prefWidth="150"/>
-            <TableColumn fx:id="colCitaEstado" text="Estado" prefWidth="100"/>
-            <TableColumn fx:id="colCitaValoracion" text="Valoración" prefWidth="80"/>
+            <TableColumn fx:id="colCitaId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colCitaFecha" text="Fecha/Hora" prefWidth="150" />
+            <TableColumn fx:id="colCitaCliente" text="Cliente" prefWidth="150" />
+            <TableColumn fx:id="colCitaVehiculo" text="Vehículo" prefWidth="150" />
+            <TableColumn fx:id="colCitaServicio" text="Servicio" prefWidth="150" />
+            <TableColumn fx:id="colCitaTrabajador" text="Mecánico" prefWidth="120" />
+            <TableColumn fx:id="colCitaEstado" text="Estado" prefWidth="100" />
         </columns>
     </TableView>
-
 </VBox>

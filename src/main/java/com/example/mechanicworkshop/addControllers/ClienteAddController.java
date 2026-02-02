@@ -2,87 +2,78 @@ package com.example.mechanicworkshop.addControllers;
 
 import com.example.mechanicworkshop.DatabaseManager;
 import com.example.mechanicworkshop.MainController;
+import com.example.mechanicworkshop.components.SectionHeaderController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import models.Cliente;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ClienteAddController implements Initializable {
 
     private MainController mainController;
 
-    @FXML private Label cliente;
+    @FXML private SectionHeaderController headerController;
+
+    @FXML private TextField nombreField;
+    @FXML private TextField apellidoField;
+    @FXML private TextField telefonoField;
+    @FXML private TextField emailField;
+    @FXML private Label mensajeLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        showAll();
+        if (headerController != null) {
+            headerController.setTitle("Nuevo Cliente");
+            headerController.setAccentColor("#27ae60");
+        }
     }
 
     @FXML
-    public void showAll() {
-        // Mostrar todos los clientes
-        List<Cliente> clientes = DatabaseManager.getAll(Cliente.class);
-        if (!clientes.isEmpty()) {
-            StringBuilder sb = new StringBuilder();
-            for (Cliente p : clientes) {
-                sb.append(p.getNombre()).append(" (Apellido: ").append(p.getApellido()).append(")\n");
-            }
-            cliente.setText(sb.toString());
+    private void guardarCliente() {
+        String nombre = nombreField.getText();
+        String apellido = apellidoField.getText();
+        String telefono = telefonoField.getText();
+        String email = emailField.getText();
+
+        if (esInvalido(nombre) || esInvalido(apellido) || esInvalido(telefono)) {
+            mensajeLabel.setText("Por favor, rellene los campos obligatorios.");
+            mensajeLabel.setVisible(true);
+            mensajeLabel.setStyle("-fx-text-fill: red;");
         } else {
-            cliente.setText("No hay clientes");
+            Cliente nuevoCliente = new Cliente(nombre, apellido, telefono, email);
+            try {
+                DatabaseManager.saveOrUpdate(nuevoCliente);
+
+                mensajeLabel.setText("Cliente guardado correctamente.");
+                mensajeLabel.setVisible(true);
+                mensajeLabel.setStyle("-fx-text-fill: green;");
+
+                limpiarCampos();
+            } catch (Exception e) {
+                mensajeLabel.setText("Error al guardar en la base de datos.");
+                mensajeLabel.setVisible(true);
+                mensajeLabel.setStyle("-fx-text-fill: red;");
+                e.printStackTrace();
+            }
         }
     }
 
-    @FXML
-    protected void editFirstElement() {
-        // Ejemplo: modificar el primer cliente y alumno
-        List<Cliente> clientes = DatabaseManager.getAll(Cliente.class);
-        if (!clientes.isEmpty()) {
-            Cliente c = clientes.get(0);
-            c.setNombre(c.getNombre() + " X");
-            c.setApellido(c.getApellido() + 1);
-            DatabaseManager.saveOrUpdate(c);
-        }
+    private boolean esInvalido(String texto) {
+        return texto == null || texto.trim().isEmpty();
     }
 
-    @FXML
-    private void getByFilters() {
-        // Ejemplo: filtrar clientes que contienen "Manu"
-        Map<String, Object> filters = new HashMap<>();
-        filters.put("nombre", " X");
-        List<Cliente> clientes = DatabaseManager.getByFilters(Cliente.class, filters, "AND", true);
-        StringBuilder sb = new StringBuilder();
-        for (Cliente c : clientes) {
-            sb.append(c.getNombre()).append(" (").append(c.getApellido()).append(")\n");
-        }
-        cliente.setText(sb.toString());
+    private void limpiarCampos() {
+        nombreField.clear();
+        apellidoField.clear();
+        telefonoField.clear();
+        emailField.clear();
     }
 
-    @FXML
-    private void getByID() {
-        List<Cliente> clientes = DatabaseManager.getAll(Cliente.class);
-        if (!clientes.isEmpty()) {
-            Cliente c = DatabaseManager.getById(Cliente.class, clientes.get(0).getId());
-            cliente.setText("cliente por ID: " + c.getNombre() + " (" + c.getApellido() + ")");
-        }
-    }
-
-
-    @FXML
-    protected void addElements() {
-        // Crear un cliente nuevo de ejemplo
-        Cliente nuevo = new Cliente("Paco", "Martinez", "656656656", "email.email.es");
-        DatabaseManager.saveOrUpdate(nuevo);
-    }
-
-
-    public void setMainController (MainController main) {
+    public void setMainController(MainController main) {
         this.mainController = main;
     }
 }
